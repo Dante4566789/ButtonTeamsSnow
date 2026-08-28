@@ -40,7 +40,7 @@
                         .trim()                      // 2. Rimuove eventuali spazi a inizio/fine
                         .replace(/'/g, '')           // 3. Rimuove eventuali apostrofi (es. D'Amico -> damico)
                         .replace(/\s+/g, '_')        // 4. Sostituisce gli spazi interni con l'underscore "_"
-                        + "@despar.it";              // 5. Aggiunge il dominio aziendale
+                        + "@domain.it";              // 5. Aggiunge il dominio aziendale
 
                     let messaggio = encodeURIComponent("Ciao " + nomeChiamante + ", Ti scrivo per il ticket : " + ticketNum + ", Descrizione: " + shortDescription + ".\n Mandami pure il codice Teamviewer cosi posso collegarmi al pc e verificare.");
                     let urlTeams = "https://teams.microsoft.com/l/chat/0/0?users=" + emailCostruita + "&message=" + messaggio;
