@@ -8,3 +8,6 @@ With the GlideForm Api provides methos of service now we can create teams link t
 
 
 Install Tamparmonkey Extension for chrome/edge to insert script on the page : https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=it 
+
+
+Modify the domain with your company domain
