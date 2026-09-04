@@ -44,11 +44,20 @@
 
                     let messaggio = encodeURIComponent("Ciao " + nomeChiamante + ", Ti scrivo per il ticket : " + ticketNum + ", Descrizione: " + shortDescription + ".\n Mandami pure il codice Teamviewer cosi posso collegarmi al pc e verificare.");
                     let urlTeams = "https://teams.microsoft.com/l/chat/0/0?users=" + emailCostruita + "&message=" + messaggio;
-                    console.log(nomeChiamante)
+
+                    let testoMessaggio = "Ciao " + nomeChiamante + ", Ti scrivo per il ticket : " + ticketNum + ", Descrizione: " + shortDescription + ".\n Mandami pure il codice Teamviewer cosi posso collegarmi al pc e verificare.";
 
 
 
-                    window.open(urlTeams, '_blank');
+                    // Il Paracadute: Copia il testo in automatico negli appunti di Windows
+                    navigator.clipboard.writeText(testoMessaggio).then(() => {
+                        // Apre Teams solo dopo aver copiato con successo
+                        window.open(urlTeams, '_blank');
+                    }).catch(err => {
+                        // Se il browser blocca la copia, apre comunque Teams
+                        window.open(urlTeams, '_blank');
+                    });
+
                 } else {
                     alert("Campo chiamante vuoto. Impossibile generare l'email.");
                 }
@@ -63,5 +72,5 @@
 
 
     // Sistema di sicurezza: spegne il radar dopo 10 secondi per evitare loop infiniti se la pagina va in errore
-    setTimeout(aggiungiBottoneTeams(), 2000);
+    setTimeout(aggiungiBottoneTeams(), 1000);
 })();
